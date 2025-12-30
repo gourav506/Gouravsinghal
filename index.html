@@ -1,0 +1,46 @@
+!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tap Game</title>
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+}
+button{
+  font-size:30px;
+  padding:20px 40px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Tap & Score</h1>
+<p id="time">Time: 30</p>
+<p id="score">Score: 0</p>
+
+<button onclick="tap()">TAP</button>
+
+<script>
+let score = 0;
+let time = 30;
+
+function tap(){
+  if(time > 0){
+    score++;
+    document.getElementById("score").innerHTML = "Score: " + score;
+  }
+}
+
+setInterval(()=>{
+  if(time > 0){
+    time--;
+    document.getElementById("time").innerHTML = "Time: " + time;
+  }
+},1000);
+</script>
+
+</body>
+</html>
